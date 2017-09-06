@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "demo": "node src/index.js",
+    "watch": "node src/watch.js",
+    "demo": "node src/index.js generate",
     "docs": "node src/doc.js",
-    "docs:md": "raml2html --theme raml2html-markdown-theme raml/tutorial-jukebox-api/jukebox-api.raml > api-docs/index.md",
-    "docs:html": "raml2html raml/tutorial-jukebox-api/jukebox-api.raml > api-docs/index.html"
+    "docs:md": "raml2html --theme raml2html-markdown-theme raml/index.raml > api-docs/index.md",
+    "docs:html": "raml2html raml/index.raml > api-docs/index.html"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "osprey": "^0.4.1",
     "osprey-mock-service": "^0.2.1",
     "raml2html": "^6.4.1",
-    "raml2html-markdown-theme": "^1.0.2"
+    "raml2html-markdown-theme": "^1.0.2",
+    "watch": "^1.0.2"
   }
 }

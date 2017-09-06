@@ -11,7 +11,7 @@ var osprey = require('osprey')
 var app = express()
 
 console.log('Starting mock API server on http://localhost:3000/');
-parser.loadRAML('./raml/tutorial-jukebox-api/jukebox-api.raml', { rejectOnErrors: true })
+parser.loadRAML('./raml/index.raml', { rejectOnErrors: true })
   .then(function (ramlApi) {
     var raml = ramlApi.expand(true).toJSON({ serializeMetadata: false })
     app.use(osprey.server(raml))

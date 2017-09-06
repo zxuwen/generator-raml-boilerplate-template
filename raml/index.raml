@@ -1,0 +1,10 @@
+#%RAML 1.0
+---
+title: My Special
+baseUri: http://my.api.com
+version: v1
+protocols: [ HTTP, HTTPS ]
+description: <description>
+mediaType: application/json
+securitySchemes:
+  oauth_2_0: !include securitySchemes/oauth_2_0.raml
