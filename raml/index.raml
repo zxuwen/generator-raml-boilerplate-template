@@ -1,10 +1,24 @@
 #%RAML 1.0
 ---
 title: My Special
-baseUri: http://my.api.com
 version: v1
-protocols: [ HTTP, HTTPS ]
 description: <description>
-mediaType: application/json
+baseUri:
+  value: http://{environment}.musicapi.com/{version}
+  (rediractable): true
+baseUriParameters:
+  environment:
+    type: string
+    enum: [ "stg", "dev", "prod" ]
+protocols: [  HTTP, HTTPS ]
+mediaType: [ application/json ]
+documentation:
+  - title: Getting Started
+    content: |
+      This is a getting started guide for the World Music API.
+  - title: Legal
+    content: See http://legal.musicapi.com
 securitySchemes:
   oauth_2_0: !include securitySchemes/oauth_2_0.raml
+  custom_scheme: !include securitySchemes/custom_scheme.raml
+securedBy: oauth_2_0
